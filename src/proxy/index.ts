@@ -1,3 +1,7 @@
+/*
+    Using the proxy pattern, a class represents the functionality of another class.
+*/
+
 interface IDoor {
     Open(): void;
     Close(): void;
