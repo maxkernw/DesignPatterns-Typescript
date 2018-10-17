@@ -40,7 +40,7 @@ class Editor {
     }
 }
 
-var editor = new Editor();
+const editor = new Editor();
 
 //Type some stuff
 editor.Type("This is the first sentence.");
