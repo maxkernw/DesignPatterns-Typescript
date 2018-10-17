@@ -1,3 +1,6 @@
+/*
+Facade pattern provides a simplified interface to a complex subsystem.
+*/
 class Computer
 {
   public GetElectricShock(): void
