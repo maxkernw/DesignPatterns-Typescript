@@ -1,4 +1,7 @@
+/*
+It provides a way to delegate the instantiation logic to child classes.
 
+*/
 
 export interface Product {
     id: string;
@@ -26,9 +29,7 @@ class ProductImpl implements Product {
     }
 }
 
-function createProduct(id: string, description: string): Product {
-    return new ProductImpl(id, description);
-}
+const createProduct = (id: string, description: string): Product => new ProductImpl(id, description);
 
 const myProduct = createProduct("abc123","Design Patterns");
 console.log(myProduct.checkInventory());
