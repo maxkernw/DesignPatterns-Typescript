@@ -39,3 +39,22 @@ resolvers.forEach(res => {
         res.Decode("someThing");
     }
 });
+
+type strategyDict<T> = { [num: number]: (input: T) => void }
+
+let strategy: strategyDict<string>
+strategy = {
+    [1]: (input: string) => console.log(`strategy 1 ${input}`),
+    [200]: (input: string) => console.log(`strategy 200 ${input}`),
+    [300]: (input: string) => console.log(`stragegy 300 ${input}`)
+};
+
+let strategy_2: strategyDict<number>
+
+strategy_2 = {
+    [1]: (input: number) => console.log(`strategy 1 ${input}`),
+    [200]: (input: number) => console.log(`strategy 200 ${input}`),
+    [300]: (input: number) => console.log(`stragegy 300 ${input}`)
+};
+const number = 300;
+strategy[number]("myInput");
