@@ -40,7 +40,8 @@ resolvers.forEach(res => {
     }
 });
 
-type Dictionary<T, K> = { [num: number]: (input: T) => K }
+
+type Dictionary<T, K> = { [key in number | string]: (input: T) => K }
 
 let strategy: Dictionary<string, void>
 strategy = {
@@ -56,5 +57,8 @@ strategy_2 = {
     [200]: (input: number) => console.log(`strategy 200 ${input}`),
     [300]: (input: number) => console.log(`stragegy 300 ${input}`)
 };
+
+let strategy_3: Dictionary<string, number>;
+
 const number = 300;
 strategy[number]("myInput");
