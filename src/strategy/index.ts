@@ -40,16 +40,16 @@ resolvers.forEach(res => {
     }
 });
 
-type strategyDict<T> = { [num: number]: (input: T) => void }
+type StrategyDict<T, K> = { [num: number]: (input: T) => K }
 
-let strategy: strategyDict<string>
+let strategy: StrategyDict<string, void>
 strategy = {
     [1]: (input: string) => console.log(`strategy 1 ${input}`),
     [200]: (input: string) => console.log(`strategy 200 ${input}`),
     [300]: (input: string) => console.log(`stragegy 300 ${input}`)
 };
 
-let strategy_2: strategyDict<number>
+let strategy_2: StrategyDict<number, void>
 
 strategy_2 = {
     [1]: (input: number) => console.log(`strategy 1 ${input}`),
